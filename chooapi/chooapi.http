@@ -1,0 +1,6 @@
+@chooapi_HostAddress = http://localhost:5160
+
+GET {{chooapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

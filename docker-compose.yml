@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  chooapi:
+    image: mcr.microsoft.com/windows/nanoserver:1803-amd64
+    networks:
+        - 58db421ffde4
+    build:
+      context: .
+      dockerfile: chooapi/Dockerfile
+
+  eshop-seq:
+    image: mcr.microsoft.com/windows/nanoserver:1803-amd64
+    container_name: eshop-seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - "5341:5341"
+      - "8081:80"
